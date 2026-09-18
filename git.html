@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub</title>
+    <style>
+      :root {
+        --bg: #0d1117;
+        --card: #161b22;
+        --card2: #1f2630;
+        --text: #e6edf3;
+        --muted: #8b949e;
+        --green: #3fb950;
+        --blue: #58a6ff;
+        --border: #30363d;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      /* NAVBAR */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(13, 17, 23, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+
+      .logo span {
+        color: var(--green);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+
+      nav a:hover {
+        color: var(--green);
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 470px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 70px 24px;
+        border-bottom: 1px solid var(--border);
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(63, 185, 80, 0.12),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 80% 30%,
+            rgba(88, 166, 255, 0.12),
+            transparent 30%
+          );
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--green);
+        background: var(--card);
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 8vw, 76px);
+        line-height: 1.1;
+        margin-bottom: 18px;
+      }
+
+      h1 span {
+        color: var(--green);
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 680px;
+        margin: auto;
+      }
+
+      /* GENERAL */
+      section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 80px 24px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+
+      .section-title span {
+        color: var(--green);
+      }
+
+      .section-intro {
+        color: var(--muted);
+        max-width: 760px;
+        margin-bottom: 35px;
+      }
+
+      /* CARDS */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--green);
+      }
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--card2);
+        color: var(--green);
+        font-weight: bold;
+        margin-bottom: 18px;
+        font-size: 18px;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      /* TABLE */
+      .table-wrapper {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 650px;
+        background: var(--card);
+      }
+
+      th,
+      td {
+        padding: 17px 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      th {
+        background: var(--card2);
+        color: white;
+      }
+
+      td {
+        color: var(--muted);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* TIMELINE */
+      .timeline {
+        position: relative;
+        max-width: 850px;
+        margin: 40px auto 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--border);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 60px;
+        margin-bottom: 42px;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--green);
+        border: 5px solid var(--bg);
+        box-shadow: 0 0 0 2px var(--green);
+      }
+
+      .year {
+        display: inline-block;
+        color: var(--green);
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .timeline-item h3 {
+        margin-bottom: 6px;
+      }
+
+      .timeline-item p {
+        color: var(--muted);
+      }
+
+      /* FOOTER */
+      footer {
+        border-top: 1px solid var(--border);
+        text-align: center;
+        padding: 35px 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* MOBILE */
+      @media (max-width: 700px) {
+        .nav-container {
+          padding: 14px 18px;
+        }
+
+        nav ul {
+          gap: 12px;
+        }
+
+        nav a {
+          font-size: 12px;
+        }
+
+        .hero {
+          min-height: 420px;
+          padding: 55px 20px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        section {
+          padding: 60px 18px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          font-size: 27px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">Git<span>&</span>GitHub</div>
+        <ul>
+          <li><a href="#pengertian">Pengertian</a></li>
+          <li><a href="#sejarah-git">Sejarah Git</a></li>
+          <li><a href="#sejarah-github">Sejarah GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="badge">Materi Pengembangan Perangkat Lunak</div>
+        <h1>Git <span>&</span> GitHub</h1>
+        <p>
+          Mengenal pengertian, perbedaan, serta sejarah Git dan GitHub dalam
+          pengembangan perangkat lunak.
+        </p>
+      </div>
+    </header>
+
+    <!-- PENGERTIAN -->
+    <section id="pengertian">
+      <h2 class="section-title">1. Pengertian Git dan <span>GitHub</span></h2>
+      <p class="section-intro">
+        Git dan GitHub merupakan dua hal yang sering digunakan dalam
+        pengembangan perangkat lunak. Keduanya membantu programmer mengelola
+        kode program, mencatat perubahan, serta bekerja sama dalam sebuah
+        proyek. Meskipun sering digunakan bersamaan, Git dan GitHub bukanlah hal
+        yang sama.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">GIT</div>
+          <h3>Git</h3>
+          <p>
+            Git adalah sistem pengontrol versi terdistribusi (Distributed
+            Version Control System/DVCS) yang digunakan untuk melacak perubahan
+            pada file, terutama kode program.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">GH</div>
+          <h3>GitHub</h3>
+          <p>
+            GitHub adalah platform berbasis internet yang menyediakan tempat
+            untuk menyimpan repositori Git, berkolaborasi, dan mengelola proyek
+            perangkat lunak.
+          </p>
+        </div>
+      </div>
+
+      <h3 style="margin: 45px 0 18px">Perbedaan Singkat</h3>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Aspek</th>
+              <th>Git</th>
+              <th>GitHub</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jenis</td>
+              <td>Sistem pengontrol versi</td>
+              <td>Platform hosting dan kolaborasi</td>
+            </tr>
+            <tr>
+              <td>Fungsi utama</td>
+              <td>Mencatat dan mengelola perubahan kode</td>
+              <td>Menyimpan repositori dan memfasilitasi kerja sama</td>
+            </tr>
+            <tr>
+              <td>Penggunaan</td>
+              <td>Bisa digunakan secara lokal tanpa internet</td>
+              <td>Umumnya digunakan melalui internet</td>
+            </tr>
+            <tr>
+              <td>Pengembang</td>
+              <td>Linus Torvalds dan komunitas</td>
+              <td>
+                Tom Preston-Werner, Chris Wanstrath, P. J. Hyett, dan Scott
+                Chacon
+              </td>
+            </tr>
+            <tr>
+              <td>Contoh</td>
+              <td>git commit, git branch</td>
+              <td>Repository, Pull Request, Issues</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEJARAH GIT -->
+    <section id="sejarah-git">
+      <h2 class="section-title">2. Sejarah <span>Git</span></h2>
+      <p class="section-intro">
+        Git dibuat oleh Linus Torvalds, yang juga dikenal sebagai pencipta
+        kernel Linux.
+      </p>
+
+      <div class="card">
+        <p>
+          Sebelum Git dibuat, pengembangan Linux menggunakan sistem pengontrol
+          versi bernama BitKeeper. Pada tahun 2005, terjadi perubahan dalam
+          penggunaan BitKeeper untuk pengembangan Linux sehingga diperlukan
+          sistem pengontrol versi baru.
+        </p>
+        <br />
+        <p>
+          Linus Torvalds kemudian membuat Git dengan tujuan menyediakan sistem
+          yang cepat, terdistribusi, dan mampu menangani pengembangan proyek
+          besar seperti kernel Linux.
+        </p>
+      </div>
+
+      <h3 style="margin-top: 50px; text-align: center">Perkembangan Git</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="year">2005</div>
+          <h3>Awal pengembangan Git</h3>
+          <p>
+            Linus Torvalds membuat Git untuk mendukung pengembangan kernel
+            Linux.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="year">2005</div>
+          <h3>Rilis awal Git</h3>
+          <p>
+            Git mulai digunakan sebagai sistem pengontrol versi untuk
+            pengembangan Linux.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="year">Saat ini</div>
+          <h3>Digunakan secara luas</h3>
+          <p>
+            Git digunakan dalam berbagai proyek perangkat lunak, mulai dari
+            tugas kuliah hingga pengembangan aplikasi berskala besar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEJARAH GITHUB -->
+    <section id="sejarah-github">
+      <h2 class="section-title">3. Sejarah <span>GitHub</span></h2>
+      <p class="section-intro">
+        GitHub didirikan pada tahun 2008 oleh Tom Preston-Werner, Chris
+        Wanstrath, P. J. Hyett, dan Scott Chacon.
+      </p>
+
+      <div class="card">
+        <p>
+          Platform ini dikembangkan untuk memudahkan programmer menyimpan proyek
+          Git secara online serta berkolaborasi dengan programmer lain.
+        </p>
+        <br />
+        <p>
+          GitHub kemudian berkembang menjadi salah satu platform penting dalam
+          pengembangan perangkat lunak, baik untuk proyek pribadi, proyek open
+          source, maupun pengembangan aplikasi perusahaan.
+        </p>
+      </div>
+
+      <h3 style="margin-top: 50px; text-align: center">Perkembangan GitHub</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="year">2008</div>
+          <h3>GitHub diluncurkan</h3>
+          <p>
+            GitHub mulai menyediakan layanan hosting repositori Git dan
+            kolaborasi pengembang.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="year">2018</div>
+          <h3>Diakuisisi Microsoft</h3>
+          <p>
+            Microsoft mengakuisisi GitHub untuk memperluas pengembangan dan
+            layanan kolaborasi perangkat lunak.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="year">Saat ini</div>
+          <h3>Platform pengembangan kolaboratif</h3>
+          <p>
+            GitHub menyediakan fitur repositori, Pull Request, Issues, Actions,
+            dan berbagai layanan pengembangan lainnya.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Materi Git & GitHub</p>
+      <p>Pengembangan Perangkat Lunak</p>
+    </footer>
+  </body>
+</html>
