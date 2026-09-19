@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--nav-->
+<nav>
+  <div class="nav-container">
+    <div class="logo">Git<span>&</span>GitHub</div>
+    <ul>
+      <li><a href="beranda.html">Beranda</a></li>
+      <li><a href="git.html">Sejarah Git&Github</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--content section-->
+<section>
+        <h2 class="section-title">1. Pendahuluan</h2>
+        <p class="section-intro">Dalam pengembangan perangkat lunak, perubahan terhadap kode program terjadi secara terus-menerus. Programmer dapat menambahkan fitur, memperbaiki kesalahan, mengubah struktur kode, atau menghapus bagian tertentu. Tanpa mekanisme pengelolaan perubahan yang baik, riwayat pekerjaan akan sulit dilacak dan kesalahan dapat sulit dipulihkan. Oleh karena itu, diperlukan Version Control System (VCS).</p>
+</section>
+<section>
+    <h2 class="section-title">2. Pengertian Version Control</h2>
+    <p class="section-intro">Version Control adalah sistem yang digunakan untuk mencatat, mengelola, dan melacak perubahan pada file dari waktu ke waktu. Version Control memungkinkan pengguna mengetahui perubahan yang dilakukan, melihat riwayat pekerjaan, membandingkan versi, serta kembali ke kondisi sebelumnya apabila diperlukan.</p>
+    <p class="section-intro">Dalam proyek perangkat lunak, Version Control juga membantu beberapa pengembang bekerja pada proyek yang sama secara lebih terorganisasi. Setiap perubahan dapat disimpan sebagai versi atau commit sehingga perkembangan proyek dapat ditelusuri.</p>
+</section>
+<section>
+    <h2 class="section-title">3. Fungsi Version Control</h2>
+    <ul class="feature-list">
+    <li>Melacak perubahan file dan kode program.</li>
+    <li>Menyimpan riwayat perubahan sehingga perkembangan proyek dapat ditelusuri.</li>
+    <li>Memungkinkan pemulihan atau pemeriksaan versi sebelumnya ketika terjadi kesalahan.</li>
+    <li>Mendukung pengembangan secara kolaboratif oleh beberapa pengguna.</li>
+    <li>Memisahkan pengembangan fitur menggunakan branch.</li>
+    <li>Membantu membandingkan perubahan antara satu versi dan versi lainnya.</li>
+    </ul>
+</section>
+<section>
+        <h2 class="section-title">4. Jenis-Jenis Version Control</h2>
+            <h3>4.1 Local Version Control</h3>
+                <p class="section-intro">Local Version Control menyimpan riwayat perubahan pada komputer lokal. Sistem ini dapat membantu mengelola beberapa versi file, tetapi kemampuan kolaborasinya terbatas karena repositori tidak secara langsung digunakan bersama oleh banyak pengguna.</p>
+            <h3>4.2 Centralized Version Control</h3>
+                <p class="section-intro">Centralized Version Control menggunakan satu server pusat sebagai tempat penyimpanan utama repositori. Pengguna mengambil dan mengirim perubahan melalui server tersebut. Contoh sistem yang termasuk kategori ini adalah Subversion (SVN) dan CVS.</p>
+            <h3>4.3 Distributed Version Control</h3>
+                <p class="section-intro">Distributed Version Control memungkinkan setiap pengguna memiliki salinan repositori beserta riwayat perubahannya. Git merupakan salah satu contoh Distributed Version Control System (DVCS).</p>
+</section>
+<section>
+        <h2 class="section-title">5. Git sebagai Version Control</h2>
+        <p class="section-intro">Git adalah sistem Version Control terdistribusi yang digunakan untuk mengelola dan melacak perubahan pada proyek, terutama proyek perangkat lunak. Git dapat digunakan secara lokal dan dapat dihubungkan dengan layanan penyimpanan repositori jarak jauh seperti GitHub.</p>
+</section>
+<section>
+        <h2 class="section-title">6. Konsep Dasar Git</h2>
+            <h3>6.1 Working Directory</h3>
+                <p class="section-intro">Working Directory adalah folder proyek tempat pengguna membuat, mengubah, atau menghapus file. Perubahan yang dilakukan pada tahap ini belum otomatis menjadi bagian dari commit.</p>
+            <h3>6.2 Staging Area</h3>
+                <p class="section-intro">Staging Area adalah area sementara untuk menentukan perubahan mana yang akan dimasukkan ke dalam commit. Perubahan dapat dimasukkan ke staging menggunakan perintah git add.</p>
+            <h3>6.3 Local Repository</h3>
+                <p class="section-intro">Local Repository adalah repositori Git yang berada pada komputer pengguna. Commit yang dibuat tersimpan di dalam repositori ini beserta informasi riwayat perubahan.</p>
+            <h3>6.4 Remote Repository</h3>
+                <p class="section-intro">Remote Repository adalah repositori yang berada pada lokasi lain, biasanya server atau layanan daring. GitHub dapat digunakan sebagai remote repository untuk menyimpan dan berbagi repositori Git.</p>
+</section>
+<section>
+        <h2 class="section-title">7. Alur Dasar Version Control dengan Git</h2>
+        <p class="section-intro">Alur dasar pengelolaan perubahan menggunakan Git adalah sebagai berikut:</p>
+        <div class="card2-wrapper">
+            <div class="card2">
+                <pre>
+Working Directory
+    |
+  git add
+    v
+Staging Area
+    |
+  git commit
+    v
+Local Repository
+    |
+  git push
+    v
+Remote Repository
+                </pre>
+            </div>
+        </div>
+        <p class="section-intro">Apabila perubahan dari remote repository perlu diambil ke komputer lokal, perintah git pull dapat digunakan.</p>
+        <div class="card2-wrapper">
+            <div class="card2">
+                <pre>
+Remote Repository
+    |
+  git pull
+    v
+Local Repository
+                </pre>
+            </div>
+        </div>
+</section>
+<section>
+        <h2 class="section-title">8. Praktik Dasar Version Control Menggunakan Git</h2>
+                <p class="section-intro">Bagian berikut menunjukkan praktik sederhana menggunakan Git pada sebuah proyek bernama PMW. Contoh ini menggunakan file Tugas1.html dan diasumsikan Git Bash telah tersedia pada komputer.</p>
+            <h3>8.1 Membuka Folder Proyek</h3>
+                <p class="section-intro">Masuk ke folder proyek melalui Git Bash. Contoh:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>cd ~/Documents/Kuliah/PMW</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Periksa lokasi saat ini:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>pwd</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Periksa isi folder:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>ls</pre>
+                        </div>
+                    </div>
+            <h3>8.2 Membuat Repository Git</h3>
+                <p class="section-intro">Jika folder proyek belum menjadi repository Git, jalankan:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git init</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Perintah tersebut membuat folder .git yang berisi informasi yang diperlukan oleh Git. Repository sebaiknya dibuat pada folder proyek yang memang ingin dikelola agar file dari folder lain tidak ikut tercatat.</p>
+            <h3>8.3 Memeriksa Status Repository</h3>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git status</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Perintah git status digunakan untuk melihat kondisi repository, termasuk file yang belum dilacak, file yang berubah, dan file yang telah dimasukkan ke staging area.</p>
+            <h3>8.4 Memasukkan File ke Staging Area</h3>
+                <p class="section-intro">Jika hanya file Tugas1.html yang ingin dimasukkan ke commit:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git add Tugas1.html</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Perintah tersebut hanya memasukkan file yang disebutkan. Untuk memasukkan seluruh perubahan yang tersedia pada folder proyek, dapat digunakan:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git add .</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Penggunaan git add . perlu diperhatikan karena seluruh perubahan yang terjangkau oleh perintah tersebut dapat masuk ke staging area.</p>
+            <h3>8.5 Membuat Commit</h3>
+                <p class="section-intro">Setelah file berada di staging area, buat commit:</p>
+                <div class="card2-wrapper">
+                    <div  class="card2">
+                        <pre>git commit -m "Menambahkan Tugas 1"</pre>
+                    </div>
+                </div>
+                <p class="section-intro">Commit merupakan titik riwayat yang menyimpan perubahan yang telah dipilih. Pesan commit sebaiknya singkat tetapi menjelaskan perubahan yang dilakukan.</p>
+            <h3>8.6 Melihat Riwayat Commit</h3>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git log --oneline</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Perintah tersebut menampilkan riwayat commit dalam bentuk ringkas. Setiap commit memiliki identitas atau hash yang dapat digunakan untuk mengidentifikasi perubahan.</p>
+</section>
+<section>
+        <h2 class="section-title">9. Praktik Branch</h2>
+                <p class="section-intro">Branch digunakan untuk membuat jalur pengembangan yang terpisah. Dengan branch, pengguna dapat mengembangkan fitur tertentu tanpa langsung mengubah branch utama.</p>
+            <h3>9.1 Membuat dan Berpindah ke Branch</h3>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git switch -c fitur-baru</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Perintah tersebut membuat branch bernama fitur-baru sekaligus berpindah ke branch tersebut.</p>
+            <h3>9.2 Melihat Branch</h3>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git branch</pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Tanda bintang (*) menunjukkan branch yang sedang aktif.</p>
+                <h3>9.3 Berpindah Kembali ke Main</h3>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>git switch main</pre>
+                        </div>
+                    </div>
+            <h3>9.4 Menggabungkan Branch</h3>
+                <p class="section-intro">Setelah pekerjaan pada branch fitur-baru selesai dan telah di-commit, perubahan dapat digabungkan ke main:</p>
+                    <div class="card2-wrapper">
+                        <div class="card2">
+                            <pre>
+git switch main
+git merge fitur-baru
+                            </pre>
+                        </div>
+                    </div>
+                <p class="section-intro">Apabila Git menemukan perubahan yang saling bertentangan pada bagian yang sama dan tidak dapat menentukan perubahan yang harus digunakan secara otomatis, dapat terjadi merge conflict. Konflik tersebut perlu diselesaikan secara manual sebelum proses merge dapat diselesaikan.</p>
+</section>
+<section>
+        <h2 class="section-title">10. Menghubungkan Repository Lokal dengan GitHub</h2>
+        <p class="section-intro">Untuk menyimpan repository Git secara daring, repository lokal dapat dihubungkan dengan repository GitHub. Buat repository kosong di GitHub, kemudian tambahkan alamatnya sebagai remote.</p>
+            <div class="card2-wrapper">
+                <div class="card2">
+                    <pre>git remote add origin https://github.com/username/nama-repository.git</pre>
+                </div>
+            </div>
+        <p class="section-intro">Periksa remote yang telah terdaftar:</p>
+            <div class="card2-wrapper">
+                <div class="card2">
+                    <pre>git remote -v</pre>
+                </div>
+            </div>
+</section>
+<section>
+        <h2 class="section-title">11. Push ke Remote Repository</h2>
+        <p class="section-intro">Push digunakan untuk mengirim commit dari repository lokal ke remote repository.</p>
+            <div class="card2-wrapper">
+                <div class="card2">
+                    <pre>git push -u origin main</pre>
+                </div>
+        <p class="section-intro">Setelah hubungan tracking antara branch lokal dan remote telah ditetapkan, push berikutnya pada branch tersebut biasanya dapat dilakukan dengan:</p>
+            <div class="card2-wrapper">
+                <div class="card2">
+                    <pre>git push</pre>
+                </div>
+            </div>
+</section>
+<section>
+        <h2 class="section-title">12. Pull dari Remote Repository</h2>
+        <p class="section-intro">Pull digunakan untuk mengambil perubahan dari remote repository dan mengintegrasikannya ke branch lokal yang sedang digunakan.</p>
+            <div class="card2-wrapper">
+                <div class="card2">
+                    <pre>git pull</pre>
+                </div>
+            </div>
+</section>
+<section>
+        <h2 class="section-title">13. Contoh Praktik Lengkap</h2>
+            <p class="section-intro">Berikut contoh alur dari pembuatan repository hingga pengiriman perubahan ke GitHub:</p>
+                <ol>
+                <li>Masuk ke folder proyek.</li>
+                <li>Membuat repository Git dengan git init jika repository belum tersedia.</li>
+                <li>Memeriksa status menggunakan git status.</li>
+                <li>Memasukkan file yang diperlukan ke staging menggunakan git add.</li>
+                <li>Membuat commit menggunakan git commit.</li>
+                <li>Membuat repository di GitHub.</li>
+                <li>Menghubungkan repository lokal dengan GitHub menggunakan git remote add origin.</li>
+                <li>Mengirim commit ke GitHub menggunakan git push.</li>
+                </ol>
+                <div class="card2-wrapper">
+                    <div class="card2">
+                        <pre>
+cd ~/Documents/Kuliah/PMW
+git init
+git status
+git add Tugas1.html
+git commit -m "Menambahkan Tugas 1"
+git remote add origin https://github.com/username/PMW.git
+git push -u origin main
+                        </pre>
+                    </div>
+                </div>
+</section>
+<section>
+        <h2 class="section-title">14. Praktik Perubahan Berikutnya</h2>
+        <p class="section-intro">Jika file Tugas1.html kemudian diubah, perubahan tersebut dapat disimpan sebagai commit baru.</p>
+                <div class="card2-wrapper">
+                    <div class="card2">
+                        <pre>
+git status
+git add Tugas1.html
+git commit -m "Memperbarui Tugas 1"
+git push
+                        </pre>
+                    </div>
+                </div>
+</section>
+<section>
+        <h2 class="section-title">15. Perintah Git Dasar</h2>
+            <table border="1" cellpadding="5" cellspacing="0">
+            <tr><th>Perintah</th><th>Fungsi</th></tr>
+            <tr><td>git init</td><td>Membuat repository Git baru.</td></tr>
+            <tr><td>git status</td><td>Melihat status repository.</td></tr>
+            <tr><td>git add &lt;file&gt;</td><td>Memasukkan file tertentu ke staging area.</td></tr>
+            <tr><td>git add .</td><td>Memasukkan seluruh perubahan yang terjangkau ke staging area.</td></tr>
+            <tr><td>git commit -m "pesan"</td><td>Menyimpan perubahan sebagai commit.</td></tr>
+            <tr><td>git log --oneline</td><td>Melihat riwayat commit secara ringkas.</td></tr>
+            <tr><td>git branch</td><td>Melihat daftar branch.</td></tr>
+            <tr><td>git switch &lt;branch&gt;</td><td>Berpindah ke branch tertentu.</td></tr>
+            <tr><td>git switch -c &lt;branch&gt;</td><td>Membuat branch baru sekaligus berpindah ke branch tersebut.</td></tr>
+            <tr><td>git merge &lt;branch&gt;</td><td>Menggabungkan perubahan dari branch tertentu.</td></tr>
+            <tr><td>git remote -v</td><td>Melihat remote repository yang terdaftar.</td></tr>
+            <tr><td>git push</td><td>Mengirim commit lokal ke remote repository.</td></tr>
+            <tr><td>git pull</td><td>Mengambil dan mengintegrasikan perubahan dari remote repository.</td></tr>
+            </table>
+</section>
+<section>
+        <h2 class="section-title">16. Hal yang Perlu Diperhatikan Saat Praktik</h2>
+            <ul class="feature-list">
+            <li>Pastikan terminal berada pada folder repository yang benar sebelum menjalankan perintah Git.</li>
+            <li>Gunakan git status secara berkala untuk mengetahui kondisi repository.</li>
+            <li>Gunakan git add &lt;nama_file&gt; jika hanya file tertentu yang ingin dimasukkan ke commit.</li>
+            <li>Hindari penggunaan git add . secara sembarangan apabila terdapat file yang tidak ingin dimasukkan ke repository.</li>
+            <li>Buat pesan commit yang menjelaskan perubahan secara jelas.</li>
+            <li>Pastikan branch yang aktif sudah benar sebelum melakukan commit, merge, atau push.</li>
+            <li>Jangan menggunakan git push --force tanpa memahami dampaknya karena perintah tersebut dapat menimpa riwayat pada remote repository.</li>
+            <li>Simpan file yang tidak diperlukan dalam repository menggunakan .gitignore apabila sesuai dengan kebutuhan proyek.</li>
+            </ul>
+</section>
+<section>
+        <h2 class="section-title">17. Kesimpulan</h2>
+        <p class="section-intro">Version Control merupakan mekanisme untuk mengelola, mencatat, dan melacak perubahan pada proyek. Sistem ini penting dalam pengembangan perangkat lunak karena membantu menjaga riwayat perubahan, memulihkan kondisi sebelumnya, dan mendukung kerja sama antaranggota tim.</p>
+        <p class="section-intro">Git merupakan salah satu sistem Version Control terdistribusi yang menyediakan mekanisme untuk mengelola repository, staging area, commit, branch, merge, dan sinkronisasi dengan remote repository. GitHub dapat digunakan sebagai salah satu remote repository untuk menyimpan proyek secara daring dan mendukung kolaborasi.</p>
+        <p class="section-intro">Alur dasar yang perlu dipahami adalah Working Directory &rarr; Staging Area &rarr; Commit &rarr; Remote Repository. Dengan memahami alur tersebut serta mempraktikkan perintah dasar seperti git status, git add, git commit, git branch, git push, dan git pull, pengguna dapat mulai menerapkan Version Control secara terstruktur dalam pengembangan proyek.</p>
+</section>
+<footer>
+    <p>Materi Git & GitHub</p>
+    <p>Pengembangan Perangkat Lunak</p>
+</footer>
+</body>
+</html>
