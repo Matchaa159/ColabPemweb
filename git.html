@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git & GitHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body class="font-[Arial,Helvetica,sans-serif] bg-[var(--bg)] text-[var(--text)] leading-[1.7] text-[18px]">
     <!-- NAVBAR -->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Git<span>&</span>GitHub</div>
-        <ul>
-          <li><a href="beranda.html">Beranda</a></li>
-          <li><a href="vc.html">Version Control</a></li>
+    <nav class="sticky top-0 z-100 bg-#0D1117 backdrop-blur border-b">
+      <div class="max-w-[1100px] m-auto py-4 px-6 flex justify-between text-center">
+        <div class="text-[20px] font-bold text-white">Git<span class="text-[var(--green)]">&</span>GitHub</div>
+        <ul class="list-none flex gap-[24px]">
+          <li><a href="beranda.html" class="text-[var(--muted)] no-underline duration-200 hover:text-[var(--green)]">Beranda</a></li>
+          <li><a href="vc.html " class="text-[var(--muted)] no-underline duration-200 hover:text-[var(--green)]">Version Control</a></li>
         </ul>
       </div>
-    </nav>
+    </nav> 
+
+
     <!-- PENGERTIAN -->
-    <section id="pengertian">
-      <h2 class="section-title">1. Pengertian Git dan <span>GitHub</span></h2>
-      <p class="section-intro">
+    <section class="max-w-[1100px] m-auto py-[10px] px-[10px]">
+      <h2 class="section-title text-[32px] font-bold mb-[12px]">1. Pengertian Git <span class="text-[var(--green)]">dan</span> GitHub</h2>
+      <p class="text-[var(--muted)] max-w-[760px] mb-[35px]">
         Git dan GitHub merupakan dua hal yang sering digunakan dalam
         pengembangan perangkat lunak. Keduanya membantu programmer mengelola
         kode program, mencatat perubahan, serta bekerja sama dalam sebuah
@@ -29,21 +32,21 @@
         yang sama.
       </p>
 
-      <div class="cards">
-        <div class="card">
-          <div class="icon">GIT</div>
-          <h3>Git</h3>
-          <p>
+      <div class="cards grid gap-[20px] grid-cols-2">
+        <div class="bg-[var(--card)] border border-solid border-[var(--border)] rounded-[14px] p-[28px] transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-[var(--green)]">
+          <div class="w-[48px] h-[48px] grid place-items-center rounded-[12px] bg-[var(--card2)] text-[var(--green)] font-bold mb-[18-x] text-[18px]">GIT</div>
+          <h3 class="mb-10px font-bold mt-[20px]">Git</h3>
+          <p class="text-[var(--muted)]">
             Git adalah sistem pengontrol versi terdistribusi (Distributed
             Version Control System/DVCS) yang digunakan untuk melacak perubahan
             pada file, terutama kode program.
           </p>
         </div>
 
-        <div class="card">
-          <div class="icon">GH</div>
-          <h3>GitHub</h3>
-          <p>
+        <div class="bg-[var(--card)] border border-solid border-[var(--border)] rounded-[14px] p-[28px] transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-[var(--green)]">
+          <div class="w-[48px] h-[48px] grid place-items-center rounded-[12px] bg-[var(--card2)] text-[var(--green)] font-bold mb-[18-x] text-[18px]">GH</div>
+          <h3 class="mb-10px font-bold mt-[20px]">GitHub</h3>
+          <p class="text-[var(--muted)]">
             GitHub adalah platform berbasis internet yang menyediakan tempat
             untuk menyimpan repositori Git, berkolaborasi, dan mengelola proyek
             perangkat lunak.
@@ -51,10 +54,10 @@
         </div>
       </div>
 
-      <h3 style="margin: 45px 0 18px">Perbedaan Singkat</h3>
+      <h3 class="mb-[18px] m-auto mt-[48px] font-bold">Perbedaan Singkat</h3>
 
-      <div class="table-wrapper">
-        <table>
+      <div class="overflow-x-auto border border-solid border-[var(--border)] rounded-[14px] ">
+        <table class="w-full border-collapse min-w-[650px] bg-[var(--card)]">
           <thead>
             <tr>
               <th>Aspek</th>
@@ -97,56 +100,58 @@
     </section>
 
     <!-- SEJARAH GIT -->
-    <section id="sejarah-git">
-      <h2 class="section-title">2. Sejarah <span>Git</span></h2>
-      <p class="section-intro">
+    <section class="max-w-[1100px] m-auto py-[10px] px-[10px]">
+      <h2 class="section-title text-[32px] font-bold mb-[12px]">2. Sejarah <span class="text-[var(--green)]">Git</span></h2>
+      <p class="text-[var(--muted)] max-w-[760px] mb-[35px]">
         Git dibuat oleh Linus Torvalds, yang juga dikenal sebagai pencipta
         kernel Linux.
       </p>
 
-      <div class="card">
-        <p>
+      <div class="bg-[var(--card)] border border-solid border-[var(--border)] rounded-[14px] p-[28px] transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-[var(--green)]">
+        <p class="text-[var(--muted)]">
           Sebelum Git dibuat, pengembangan Linux menggunakan sistem pengontrol
           versi bernama BitKeeper. Pada tahun 2005, terjadi perubahan dalam
           penggunaan BitKeeper untuk pengembangan Linux sehingga diperlukan
           sistem pengontrol versi baru.
         </p>
         <br />
-        <p>
+        <p class="text-[var(--muted)]">
           Linus Torvalds kemudian membuat Git dengan tujuan menyediakan sistem
           yang cepat, terdistribusi, dan mampu menangani pengembangan proyek
           besar seperti kernel Linux.
         </p>
       </div>
 
-      <h3 style="margin-top: 50px; text-align: center">Perkembangan Git</h3>
+      <h3 class="mt-[50px] text-center font-bold">Perkembangan Git</h3>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="year">2005</div>
-          <h3>Awal pengembangan Git</h3>
-          <p>
+      <div class="relative max-w-[850px] mt-[40px] mx-auto before:content-[''] before:absolute before:left-[18px] before:top-[0] before:bottom-[0] before:w-[2px] before:bg-[var(--border)]">
+        <div class="relative pl-[60px] mb-[42px]">
+          <div class="absolute left-[8px] top-[4px] w-[22px] h-[22px] rounded-full bg-[var(--green)] border-[5px] border-solid border-[var(--bg)] ring-2 ring-[var(--green)] "></div>
+          <div class="inline-block text-[var(--green)] font-bold text-[14px] mb-[5px]">2005</div>
+          <h3 class="font-bold mb-[6px]">Awal pengembangan Git</h3>
+          <p class="text-[var(--muted)]">
             Linus Torvalds membuat Git untuk mendukung pengembangan kernel
             Linux.
           </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="year">2005</div>
-          <h3>Rilis awal Git</h3>
-          <p>
+        <div class="relative max-w-[850px] mt-[40px] mx-auto before:content-[''] before:absolute before:left-[18px] before:top-[0] before:bottom-[0] before:w-[2px] before:bg-[var(--border)]">
+        <div class="relative pl-[60px] mb-[42px]">
+          <div class="absolute left-[8px] top-[4px] w-[22px] h-[22px] rounded-full bg-[var(--green)] border-[5px] border-solid border-[var(--bg)] ring-2 ring-[var(--green)] "></div>
+          <div class="inline-block text-[var(--green)] font-bold text-[14px] mb-[5px]">2005</div>
+          <h3 class="font-bold mb-[6px]">Rilis Awal Git</h3>
+          <p class="text-[var(--muted)]">
             Git mulai digunakan sebagai sistem pengontrol versi untuk
             pengembangan Linux.
           </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="year">Saat ini</div>
-          <h3>Digunakan secara luas</h3>
-          <p>
+        <div class="relative max-w-[850px] mt-[40px] mx-auto before:content-[''] before:absolute before:left-[18px] before:top-[0] before:bottom-[0] before:w-[2px] before:[var(--border)]">
+        <div class="relative pl-[60px] mb-[42px]">
+          <div class="absolute left-[8px] top-[4px] w-[22px] h-[22px] rounded-full bg-[var(--green)] border-[5px] border-solid border-[var(--bg)] ring-2 ring-[var(--green)] "></div>
+          <div class="inline-block text-[var(--green)] font-bold text-[14px] mb-[5px]">Saat Ini</div>
+          <h3 class="font-bold mb-[6px]">Digunkan Secara Luas</h3>
+          <p class="text-[var(--muted)]">
             Git digunakan dalam berbagai proyek perangkat lunak, mulai dari
             tugas kuliah hingga pengembangan aplikasi berskala besar.
           </p>
@@ -155,54 +160,56 @@
     </section>
 
     <!-- SEJARAH GITHUB -->
-    <section id="sejarah-github">
-      <h2 class="section-title">3. Sejarah <span>GitHub</span></h2>
-      <p class="section-intro">
+    <section class="max-w-[1100px] m-auto py-[10px] px-[10px]">
+      <h2 class="section-title text-[32px] font-bold mb-[12px]">3. Sejarah <span class="text-[var(--green)]">GitHub</span></h2>
+      <p class="text-[var(--muted)] max-w-[760px] mb-[35px]">
         GitHub didirikan pada tahun 2008 oleh Tom Preston-Werner, Chris
         Wanstrath, P. J. Hyett, dan Scott Chacon.
       </p>
 
-      <div class="card">
-        <p>
+      <div class="bg-[var(--card)] border border-solid border-[var(--border)] rounded-[14px] p-[28px] transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-[var(--green)]">
+        <p class="text-[var(--muted)]">
           Platform ini dikembangkan untuk memudahkan programmer menyimpan proyek
           Git secara online serta berkolaborasi dengan programmer lain.
         </p>
         <br />
-        <p>
+        <p class="text-[var(--muted)]">
           GitHub kemudian berkembang menjadi salah satu platform penting dalam
           pengembangan perangkat lunak, baik untuk proyek pribadi, proyek open
           source, maupun pengembangan aplikasi perusahaan.
         </p>
       </div>
 
-      <h3 style="margin-top: 50px; text-align: center">Perkembangan GitHub</h3>
+      <h3 class="mt-[50px] text-center font-bold">Perkembangan GitHub</h3>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="year">2008</div>
-          <h3>GitHub diluncurkan</h3>
-          <p>
+      <div class="relative max-w-[850px] mt-[40px] mx-auto before:content-[''] before:absolute before:left-[18px] before:top-[0] before:bottom-[0] before:w-[2px] before:bg-[var(--border)]">
+        <div class="relative pl-[60px] mb-[42px]">
+          <div class="absolute left-[8px] top-[4px] w-[22px] h-[22px] rounded-full bg-[var(--green)] border-[5px] border-solid border-[var(--bg)] ring-2 ring-[var(--green)] "></div>
+          <div class="inline-block text-[var(--green)] font-bold text-[14px] mb-[5px]">2008</div>
+          <h3 class="font-bold mb-[6px]">GitHub Diluncurkan</h3>
+          <p class="text-[var(--muted)]">
             GitHub mulai menyediakan layanan hosting repositori Git dan
             kolaborasi pengembang.
           </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="year">2018</div>
-          <h3>Diakuisisi Microsoft</h3>
-          <p>
+        <div class="relative max-w-[850px] mt-[40px] mx-auto before:content-[''] before:absolute before:left-[18px] before:top-[0] before:bottom-[0] before:w-[2px] before:bg-[var(--border)]">
+        <div class="relative pl-[60px] mb-[42px]">
+          <div class="absolute left-[8px] top-[4px] w-[22px] h-[22px] rounded-full bg-[var(--green)] border-[5px] border-solid border-[var(--bg)] ring-2 ring-[var(--green)] "></div>
+          <div class="inline-block text-[var(--green)] font-bold text-[14px] mb-[5px]">2018</div>
+          <h3 class="font-bold mb-[6px]">Diakuisisi Microsoft</h3>
+          <p class="text-[var(--muted)]">
             Microsoft mengakuisisi GitHub untuk memperluas pengembangan dan
             layanan kolaborasi perangkat lunak.
           </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="year">Saat ini</div>
-          <h3>Platform pengembangan kolaboratif</h3>
-          <p>
+        <div class="relative max-w-[850px] mt-[40px] mx-auto before:content-[''] before:absolute before:left-[18px] before:top-[0] before:bottom-[0] before:w-[2px] before:[var(--border)]">
+        <div class="relative pl-[60px] mb-[42px]">
+          <div class="absolute left-[8px] top-[4px] w-[22px] h-[22px] rounded-full bg-[var(--green)] border-[5px] border-solid border-[var(--bg)] ring-2 ring-[var(--green)] "></div>
+          <div class="inline-block text-[var(--green)] font-bold text-[14px] mb-[5px]">Saat Ini</div>
+          <h3 class="font-bold mb-[6px]">Platform Pengembangan kolaboratif</h3>
+          <p class="text-[var(--muted)]">
             GitHub menyediakan fitur repositori, Pull Request, Issues, Actions,
             dan berbagai layanan pengembangan lainnya.
           </p>
@@ -210,7 +217,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="border-t text-center py-[14px] py-[18px] text-[var(--muted)] text-[14px]">
       <p>Materi Git & GitHub</p>
       <p>Pengembangan Perangkat Lunak</p>
     </footer>

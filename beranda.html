@@ -1,35 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git & Github</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="font-[Arial,Helvetica,sans-serif] bg-[var(--bg)] text-[var(--text)] leading-[1.7]">
+    
     <!-- NAVBAR -->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Git<span>&</span>GitHub</div>
-        <ul>
-          <li><a href="git.html">Sejarah Git&Github</a></li>
-          <li><a href="vc.html">Version Control</a></li>
+    <nav class="sticky top-0 z-100 bg-#0D1117 backdrop-blur border-b">
+      <div class="nav-container max-w-[1100px] m-auto py-4 px-6 flex justify-between text-center">
+        <div class="text-[20px] font-bold text-white">Git<span class="text-[var(--green)]">&</span>GitHub</div>
+        <ul class="list-none flex gap-[24px]">
+          <li><a href="git.html" class="text-[var(--muted)] no-underline duration-200 hover:text-[var(--green)]">Sejarah Git&Github</a></li>
+          <li><a href="vc.html " class="text-[var(--muted)] no-underline duration-200 hover:text-[var(--green)]">Version Control</a></li>
         </ul>
       </div>
-    </nav>
+    </nav> 
 
     <!-- HERO -->
-    <header class="hero">
-      <div class="hero-content">
-        <div class="badge">Materi Pengembangan Perangkat Lunak</div>
-        <h1>Git <span>&</span> GitHub</h1>
-        <p>
+    <header class="hero min-h-240px flex text-center justify-center text-center py-[70px] px-[24px] border-b" style="background: radial-gradient(circle at 20% 20%, rgba(63, 185, 80, 0.12), transparent 30%), radial-gradient(circle at 80% 30%, rgba(88, 166, 255, 0.12), transparent 30%);">
+      <div class="max-w-[800px] p-15">
+        <div class="inline-block py-[6px] px-[14px] border border-solid rounded-[999px] border-[var(--border)] text-[var(--green)] bg-[var(--card)] text-[13px] mb-[20px]">Materi Pengembangan Perangkat Lunak</div>
+        <h1 class="font-bold text-[clamp(42px,8vw,76px)] leading-[1.1] mb-[18px]">Git <span class="text-[var(--green)]">&</span> GitHub</h1>
+        <p class="text-[var(--muted)] text-[18px] max-w-[680px] m-auto">
           Mengenal pengertian, perbedaan, serta sejarah Git dan GitHub dalam
           pengembangan perangkat lunak.
         </p>
       </div>
     </header>
-    <footer>
+
+
+    <footer class="border-t text-center py-[14px] py-[18px] text-[var(--muted)] text-[14px]">
       <p>Materi Git & GitHub</p>
       <p>Pengembangan Perangkat Lunak</p>
     </footer>
